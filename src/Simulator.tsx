@@ -75,6 +75,8 @@ const Simulator = () => {
       switch (msg.type) {
         case "register": {
           // Message causes simulator to be loaded as an iframe. No-op.
+          // Message also occurs during simulator restart.
+          simulateEvent(defaultEvent.value);
           break;
         }
         case "init": {
@@ -87,12 +89,13 @@ const Simulator = () => {
           if (eventData.length) {
             setEvents(eventData);
             setSelectedEvent(eventData[0].value);
+            simulateEvent(eventData[0].value);
           }
           break;
         }
       }
     },
-    [requestEventData]
+    [requestEventData, simulateEvent]
   );
 
   // Used to prevent two calls inside useEffect while running
