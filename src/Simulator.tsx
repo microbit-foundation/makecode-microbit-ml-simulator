@@ -24,7 +24,7 @@ interface EventData {
   value: number;
 }
 
-const simChannel = "microbitML";
+const simChannel = "microbit-ml-v1";
 const defaultEvent: EventData = { name: "unknown", value: 1 };
 const textDecoder = new TextDecoder();
 const textEncoder = new TextEncoder();
