@@ -1,14 +1,8 @@
 {
-  "event-select": [
+  "select-label": [
     {
       "type": 0,
-      "value": "Select event"
-    }
-  ],
-  "simulator-info": [
-    {
-      "type": 0,
-      "value": "Simulate machine learning event:"
+      "value": "Simulating machine learning event:"
     }
   ]
 }

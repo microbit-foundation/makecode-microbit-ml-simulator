@@ -33,7 +33,7 @@ div.container {
   overflow: hidden;
 }
 
-p {
+label {
   font-size: 1rem;
   overflow-wrap: break-word;
 }

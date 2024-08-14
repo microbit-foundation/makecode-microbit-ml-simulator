@@ -1,10 +1,6 @@
 {
-  "event-select": {
-    "defaultMessage": "Select event",
-    "description": "Aria label for the simulator event select input"
-  },
-  "simulator-info": {
-    "defaultMessage": "Simulate machine learning event:",
-    "description": "Information or description of the simulator"
+  "select-label": {
+    "defaultMessage": "Simulating machine learning event:",
+    "description": "Label for the simulator event select input"
   }
 }

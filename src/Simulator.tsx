@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import "./simulator.css";
-import { FormattedMessage, useIntl } from "react-intl";
 
 type MessageType =
   | "register"
@@ -133,15 +133,13 @@ const Simulator = () => {
     [simulateEvent]
   );
 
-  const intl = useIntl();
-
   return (
     <div className="container">
-      <p>
-        <FormattedMessage id="simulator-info" />
-      </p>
+      <label htmlFor="select-event">
+        <FormattedMessage id="select-label" />
+      </label>
       <select
-        aria-label={intl.formatMessage({ id: "event-select" })}
+        id="select-event"
         value={selectedEvent}
         onChange={handleSelectChange}
       >
