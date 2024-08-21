@@ -2,7 +2,7 @@
   "select-label": [
     {
       "type": 0,
-      "value": "Simulating machine learning event:"
+      "value": "ML event:"
     }
   ]
 }
