@@ -7,12 +7,7 @@ import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import "./simulator.css";
 
-type MessageType =
-  | "register"
-  | "init"
-  | "data"
-  | "request_data"
-  | "simulate_event";
+type MessageType = "register" | "data" | "request_data" | "simulate_event";
 
 interface Message {
   type: MessageType;
@@ -76,12 +71,7 @@ const Simulator = () => {
         case "register": {
           // Message causes simulator to be loaded as an iframe. No-op.
           // Message also occurs during simulator restart.
-          simulateEvent(defaultEvent.value);
-          break;
-        }
-        case "init": {
-          // Send message back to extension to confirm initialization and request event data.
-          requestEventData({ type: "request_data" });
+          simulateEvent(selectedEvent);
           break;
         }
         case "data": {
@@ -95,7 +85,7 @@ const Simulator = () => {
         }
       }
     },
-    [requestEventData, simulateEvent]
+    [selectedEvent, simulateEvent]
   );
 
   // Used to prevent two calls inside useEffect while running
